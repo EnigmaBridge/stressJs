@@ -1,4 +1,5 @@
 'use strict';
+// Note: not working for now, just for demo.
 
 var benchrest = require('bench-rest');
 
