@@ -1,1 +1,7 @@
+On the server:
+locust --host=https://site2.enigmabridge.com:11180
+
+On the client:
 ssh -L 9000:127.0.0.1:8089 machine
+
+Open 127.0.0.1:9000 on the client.
