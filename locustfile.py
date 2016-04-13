@@ -10,7 +10,7 @@ class UserBehavior(TaskSet):
 
     def loadDb(self):
         with open("requests.txt") as f:
-            self.reqs = f.readlines()
+            self.reqs = [x.strip() for x in f.readlines()]
         pass
 
     @task(1)
