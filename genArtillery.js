@@ -10,7 +10,7 @@ var i, ln=reqDb.length;
 // $ artillery run hello.json
 var aconf = {
     "config": {
-    "target": "https://site2.enigmabridge.com:11180",
+    "target": "https://site1.enigmabridge.com:11180",
         "phases": [
             { "duration": 300, "arrivalRate": 50 },
             { "duration": 120, "arrivalRate": 10, "rampTo": 50 },
