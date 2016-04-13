@@ -1,2 +1,2 @@
 #!/bin/bash
-node ./node_modules/artillery/bin/artillery run scriptArtillery.json
+node ./node_modules/artillery/bin/artillery run scriptArtillery_site1.json

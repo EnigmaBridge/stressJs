@@ -7,27 +7,18 @@
         "arrivalRate": 50
       },
       {
-        "duration": 120,
+        "duration": 300,
         "arrivalRate": 10,
         "rampTo": 50
       },
       {
-        "duration": 60,
+        "duration": 300,
         "arrivalCount": 20
       }
     ],
     "statsInterval": 1
   },
   "scenarios": [
-    {
-      "flow": [
-        {
-          "get": {
-            "url": "/1.0/TEST_API0000000000/GetImportPublicKey/ef7c8caed801136f/{}"
-          }
-        }
-      ]
-    },
     {
       "flow": [
         {
