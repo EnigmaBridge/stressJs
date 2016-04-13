@@ -13,8 +13,8 @@ var aconf = {
     "target": "https://site1.enigmabridge.com:11180",
         "phases": [
             { "duration": 300, "arrivalRate": 50 },
-            { "duration": 120, "arrivalRate": 10, "rampTo": 50 },
-            { "duration": 60, "arrivalCount": 20 }
+            { "duration": 300, "arrivalRate": 10, "rampTo": 50 },
+            { "duration": 300, "arrivalCount": 20 }
         ],
         "statsInterval": 1
 },
