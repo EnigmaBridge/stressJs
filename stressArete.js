@@ -15,7 +15,7 @@ arete.loadTest({
     requests: 10000,
     concurrentRequests: 5,
     targetFunction: function(callback) {
-        request(reqDb[Math.floor(Math.random()*reqDb.length)], function(error, response, body) {
+        request('https://site1.enigmabridge.com:11180' + reqDb[Math.floor(Math.random()*reqDb.length)], function(error, response, body) {
             callback(error, body);
         })
     },

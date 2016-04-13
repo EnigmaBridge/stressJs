@@ -22,7 +22,7 @@ var aconf = {
 };
 
 for(i=0; i<ln; i++){
-    var creq = reqDb[i].replace('https://site2.enigmabridge.com:11180', '');
+    var creq = reqDb[i].trim();
     if (creq.trim() == '') continue;
     aconf.scenarios.push({"flow" : [ {"get": {"url": creq}} ]});
 }
