@@ -9,13 +9,31 @@ var reqDb = fs.readFileSync(requestFile).toString().split('\n');
 // https://github.com/capablemonkey/arete
 var arete = require('arete');
 var request = require('request');
+var program = require('commander');
+
+program
+    .version('0.0.1')
+    .option('-n, --requests <n>', 'Number of requests [100]', '100')
+    .option('-c, --concurrency <n>', 'Concurrency [5]', '5')
+    .option('-s, --site <n>', 'Site - known targets, changing destination')
+    .option('-h, --host [host]', 'Target host [https://site1.enigmabridge.com:11180]', 'https://site1.enigmabridge.com:11180')
+    .parse(process.argv);
+console.log("Requests: " + program.requests
+    + ", concurrency: " + program.concurrency
+    + ", site: " + program.site
+    + ", host: " + program.host);
+
+if (program.site !== undefined){
+    program.host="https://site"+program.site+".enigmabridge.com:11180";
+    console.log("Host updated: " + program.host);
+}
 
 arete.loadTest({
     name: 'EBtest',
-    requests: 10000,
-    concurrentRequests: 5,
+    requests: program.requests,
+    concurrentRequests: program.concurrency,
     targetFunction: function(callback) {
-        request('https://site1.enigmabridge.com:11180' + reqDb[Math.floor(Math.random()*reqDb.length)], function(error, response, body) {
+        request(program.host + reqDb[Math.floor(Math.random()*reqDb.length)], function(error, response, body) {
             callback(error, body);
         })
     },
