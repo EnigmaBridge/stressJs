@@ -5,5 +5,6 @@ npm install arete
 npm install request
 npm install artillery
 npm install mocha
-
+npm install bower
+npm install commander
 
