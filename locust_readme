@@ -8,3 +8,6 @@ Open 127.0.0.1:8089 on the client.
 
 Note: increase number of file descriptors
 https://naveensnayak.wordpress.com/2015/09/17/increasing-file-descriptors-and-open-files-limit-centos-7/
+
+Another run example:
+locust -f locustfile.py --host=https://site1.enigmabridge.com:11180 --no-web -c 250 -r 250 -n 10000
