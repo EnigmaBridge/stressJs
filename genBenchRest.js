@@ -12,6 +12,17 @@ var fs  = require('fs');
 var reqDb = fs.readFileSync(requestFile).toString().split('\n');
 var i, j, ln=reqDb.length;
 
+var program = require('commander');
+
+program
+    .version('0.0.1')
+    .option('-s, --site <n>', 'Site - known targets, changing destination')
+    .option('-h, --host [host]', 'Target host [https://site1.enigmabridge.com:11180]', 'https://site1.enigmabridge.com:11180')
+    .parse(process.argv);
+if (program.site !== undefined){
+    program.host="https://site"+program.site+".enigmabridge.com:11180";
+}
+
 // Randomize requests in the array, concatenate...
 var main = [];
 for(j=0; j<50; j++) {
@@ -19,7 +30,7 @@ for(j=0; j<50; j++) {
     for (i = 0; i < ln; i++) {
         var creq = reqDb[i].trim();
         if (creq.trim() == '') continue;
-        main.push({"get": 'https://site1.enigmabridge.com:11180' + creq});
+        main.push({"get": program.host + creq});
     }
 }
 
