@@ -13,11 +13,9 @@ program
     .option('-h, --host [host]', 'Target host [https://site1.enigmabridge.com:11180]', 'https://site1.enigmabridge.com:11180')
     .option('-u, --http', 'If set http is used, https otherwise')
     .parse(process.argv);
-console.log("site: " + program.site + ", host: " + program.host);
 if (program.site !== undefined){
     var proto = program.http ? 'http' : 'https';
     program.host=proto+"://site"+program.site+".enigmabridge.com:11180";
-    console.log("Host updated: " + program.host);
 }
 
 // https://www.npmjs.com/package/artillery
